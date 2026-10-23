@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Vinyl Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+    <main class="auth-page">
+        <section class="auth-banner">
+            <a href="./index.html" class="logo">◉ vinyl<span>control</span></a>
+
+            <div class="banner-text">
+                <p class="eyebrow">SUA MÚSICA. SUA HISTÓRIA.</p>
+                <h1>FIND YOUR<br><em>RECORD.</em></h1>
+                <p>Cada disco guarda uma história. Entre para organizar a sua coleção.</p>
+            </div>
+
+            <div class="vinyl-record">
+                <div class="record-center">VINYL<br><small>CONTROL</small></div>
+            </div>
+
+            <span class="banner-footer">VINYL CULTURE · EST. 2026</span>
+        </section>
+
+        <section class="auth-content">
+            <div class="auth-form-container">
+                <p class="eyebrow">BEM-VINDO DE VOLTA</p>
+                <h2>Entre na sua conta<span>.</span></h2>
+                <p class="description">Acesse seu espaço e continue cuidando da sua coleção.</p>
+
+                <form id="loginForm">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="voce@email.com" autocomplete="email" required>
+
+                    <label for="senha">Senha</label>
+                    <div class="password-field">
+                        <input type="password" id="senha" name="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password" required>
+                        <button type="button" class="toggle-password"
+                            data-target="senha">Mostrar</button>
+                    </div>
+
+                    <p id="loginMessage" class="message" role="status"></p>
+
+                    <button type="submit" id="loginButton" class="primary-button">
+                        Entrar <span>↗</span>
+                    </button>
+                </form>
+
+                <p class="switch-page">
+                    Ainda não tem conta?
+                    <a href="./cadastro.html">Criar cadastro</a>
+                </p>
+
+                <a href="./index.html" class="back-link">← Voltar para a página inicial</a>
+            </div>
+
+            <footer>© 2026 Vinyl Control · Feito para quem ama música.</footer>
+        </section>
+    </main>
+
+    <script src="./js/auth.js"></script>
+</body>
+</html>

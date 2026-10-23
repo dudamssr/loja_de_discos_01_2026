@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinyl Control | Sua loja de discos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span class="brand-mark">◉</span> vinyl<span>control</span></a>
+
+    <nav class="nav">
+      <a href="#inicio">Início</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#estoque">Estoque</a>
+      <a href="./acervo-vendas.html">Acervo e Vendas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <div class="usuario-menu" id="usuarioMenu">
+        <button class="usuario-botao" id="usuarioBotao" type="button" aria-expanded="false" aria-label="Abrir opções do usuário">
+          <span class="usuario-avatar" id="usuarioAvatar">U</span>
+          <span class="usuario-info">
+            <small>Bem-vindo(a),</small>
+            <strong id="usuarioNome">Usuário</strong>
+          </span>
+          <span class="usuario-seta">⌄</span>
+        </button>
+
+        <div class="usuario-dropdown" id="usuarioDropdown">
+          <div class="usuario-dropdown-info">
+            <strong id="usuarioNomeCompleto">Usuário</strong>
+            <small id="usuarioEmail">email@exemplo.com</small>
+          </div>
+          <button class="botao-sair" id="botaoSair" type="button">Sair da conta ↗</button>
+        </div>
+      </div>
+
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu" type="button">☰</button>
+      <a class="top-cta" href="./acervo-vendas.html">Acervo e Vendas <span>↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> PARA QUEM AMA O SOM DE VERDADE</p>
+        <h1>Find your<br><em>record.</em></h1>
+        <p class="hero-text">Mais do que música. Encontre discos que contam histórias e transforme cada audição em uma experiência.</p>
+        <a class="pill-button" href="#catalogo">Explorar catálogo <span>↗</span></a>
+        <div class="hero-note">
+          <span class="tiny-disc">◉</span>
+          <span>O som é melhor no vinil.<br><small>Encontre seu próximo favorito.</small></span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Disco de vinil decorativo">
+        <div class="sun"></div>
+        <div class="record record-large">
+          <div class="record-label">VINYL<br><small>CONTROL</small></div>
+        </div>
+        <div class="hero-sticker">SOUND<br>MATTERS<br><span>✳</span></div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>01 — VINYL CULTURE</span>
+        <span>FEITO PARA QUEM OUVE COM A ALMA ↓</span>
+      </div>
+    </section>
+
+    <section class="section arrivals" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SELEÇÃO DA LOJA</p>
+          <h2>Discos em destaque<span>.</span></h2>
+        </div>
+        <div class="catalog-tools">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Buscar disco ou artista...">
+          </label>
+          <button class="outline-button" id="reloadButton">Atualizar ↻</button>
+        </div>
+      </div>
+
+      <div class="status-line">
+        <span class="status-dot"></span>
+        <span id="apiStatus">Conectando à API...</span>
+        <span class="status-count" id="diskCount">0 discos</span>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <div class="loading-card">Carregando discos do banco de dados...</div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE POR ESTILO</p>
+          <h2>Encontre seu ritmo<span>.</span></h2>
+        </div>
+        <p class="muted">Da primeira faixa ao lado B, existe um som esperando por você.</p>
+      </div>
+
+      <div class="genre-grid">
+        <button class="genre-card genre-coral" data-genre="rock">
+          <span>01 / CLÁSSICOS</span>
+          <strong>Classic<br>rock</strong>
+          <b>↗</b>
+          <div class="genre-disc">◉</div>
+        </button>
+        <button class="genre-card genre-cream" data-genre="pop">
+          <span>02 / PARA CANTAR</span>
+          <strong>Pop<br>music</strong>
+          <b>↗</b>
+          <div class="genre-disc">◉</div>
+        </button>
+        <button class="genre-card genre-gray" data-genre="jazz">
+          <span>03 / DEIXE TOCAR</span>
+          <strong>Jazz<br>& soul</strong>
+          <b>↗</b>
+          <div class="genre-disc">◉</div>
+        </button>
+      </div>
+
+      <p class="genre-hint">Os estilos são atalhos visuais; a busca do catálogo procura pelo título e pelo artista cadastrados.</p>
+    </section>
+
+    <section class="inventory" id="estoque">
+      <div class="inventory-copy">
+        <p class="eyebrow">POR TRÁS DAS PRATELEIRAS</p>
+        <h2>Uma loja organizada.<br><em>Uma paixão sem fim.</em></h2>
+        <p>Controle seus discos em um só lugar. Cadastre lançamentos, acompanhe quantidades e registre entradas e saídas sem perder o ritmo.</p>
+        <a class="pill-button pill-dark" href="#admin">Gerenciar estoque <span>↗</span></a>
+        <a class="pill-button" href="./acervo-vendas.html">Abrir Acervo e Vendas <span>↗</span></a>
+      </div>
+
+      <div class="inventory-symbol">
+        <div class="record record-medium">
+          <div class="record-label">SIDE A<br><small>PLAY IT LOUD</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-section" id="admin">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PAINEL DA LOJA</p>
+          <h2>Gerenciar catálogo<span>.</span></h2>
+        </div>
+        <p class="muted">As ações abaixo usam as rotas da API Vinyl Control.</p>
+      </div>
+
+      <div class="admin-layout">
+        <form id="diskForm" class="admin-form">
+          <h3 id="formTitle">Adicionar um disco</h3>
+          <input type="hidden" id="diskId">
+
+          <label>Título do disco
+            <input id="titulo" name="titulo" required maxlength="150" placeholder="Ex.: Midnights">
+          </label>
+
+          <label>Artista
+            <input id="artista" name="artista" required maxlength="150" placeholder="Ex.: Taylor Swift">
+          </label>
+
+          <div class="form-row">
+            <label>Preço de custo (R$)
+              <input id="precoCusto" name="precoCusto" type="number" min="0.01" step="0.01" required placeholder="89.90">
+            </label>
+            <label>Quantidade
+              <input id="quantidade" name="quantidade" type="number" min="0" step="1" required placeholder="10">
+            </label>
+          </div>
+
+          <label>Estoque mínimo
+            <input id="estoqueMinimo" name="estoqueMinimo" type="number" min="0" step="1" value="1" required>
+          </label>
+
+          <div class="form-actions">
+            <button class="pill-button" type="submit" id="saveButton">Salvar disco <span>↗</span></button>
+            <button class="outline-button hidden" type="button" id="cancelEdit">Cancelar</button>
+          </div>
+
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+
+        <div class="manage-panel">
+          <div class="manage-head">
+            <h3>Discos cadastrados</h3>
+            <span id="manageCount">0 itens</span>
+          </div>
+          <div class="manage-list" id="manageList">
+            <p class="muted">Carregando catálogo...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="movement-panel">
+        <div>
+          <p class="eyebrow">MOVIMENTAÇÃO DE ESTOQUE</p>
+          <h3>Registrar entrada ou saída</h3>
+          <p class="muted">A API ajusta a quantidade e impede saída maior que o estoque disponível.</p>
+        </div>
+
+        <form id="movementForm" class="movement-form">
+          <label>Disco
+            <select id="movementDisk" required>
+              <option value="">Selecione um disco</option>
+            </select>
+          </label>
+
+          <label>Tipo
+            <select id="movementType" required>
+              <option value="ENTRADA">Entrada</option>
+              <option value="SAIDA">Saída</option>
+            </select>
+          </label>
+
+          <label>Quantidade
+            <input id="movementQuantity" type="number" min="1" step="1" value="1" required>
+          </label>
+
+          <label>Usuário ID
+            <input id="movementUser" type="number" min="1" step="1" value="1" required>
+          </label>
+
+          <button class="pill-button" type="submit">Registrar <span>↗</span></button>
+        </form>
+
+        <p class="form-message" id="movementMessage" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#inicio"><span class="brand-mark">◉</span> vinyl<span>control</span></a>
+    <p>Para quem acredita que música também é objeto de afeto.</p>
+    <span>© 2026 Vinyl Control</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

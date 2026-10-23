@@ -1,0 +1,360 @@
+
+:root {
+    --preto: #111110;
+    --preto-card: #1b1b19;
+    --coral: #f15d45;
+    --creme: #f4e6bd;
+    --branco: #f7f1e7;
+    --cinza: #aaa69d;
+    --fonte: 'DM Sans', sans-serif;
+    --fonte-titulo: 'Playfair Display', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--preto);
+    color: var(--branco);
+    font-family: var(--fonte);
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.auth-banner {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px 8%;
+    background: var(--coral);
+    color: var(--preto);
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+    font: 800 23px var(--fonte-titulo);
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--creme);
+    font-style: italic;
+}
+
+.banner-text {
+    position: relative;
+    z-index: 2;
+    max-width: 440px;
+    margin: auto 0;
+    padding: 50px 0;
+}
+
+.eyebrow {
+    margin-bottom: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.banner-text h1 {
+    margin-bottom: 22px;
+    font: 800 clamp(42px, 5.5vw, 76px)/0.98 var(--fonte-titulo);
+    letter-spacing: -3px;
+}
+
+.banner-text h1 em {
+    color: var(--creme);
+    font-style: normal;
+}
+
+.banner-text > p:last-child {
+    max-width: 290px;
+    color: #542a20;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.vinyl-record {
+    position: absolute;
+    right: -115px;
+    bottom: 5%;
+    width: min(38vw, 420px);
+    aspect-ratio: 1;
+    border: 8px solid #171716;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+        circle,
+        #181817 0 2px,
+        #292927 3px 4px,
+        #101010 5px 7px
+    );
+    box-shadow: 0 20px 50px #4b211c66;
+    transform: rotate(-15deg);
+}
+
+.record-center {
+    position: absolute;
+    inset: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--creme);
+    text-align: center;
+    font: 700 9px var(--fonte-titulo);
+}
+
+.record-center small {
+    margin-top: 4px;
+    font: 700 6px var(--fonte);
+    letter-spacing: 1px;
+}
+
+.banner-footer {
+    position: relative;
+    z-index: 2;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.auth-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 9%;
+}
+
+.auth-form-container {
+    width: 100%;
+    max-width: 390px;
+}
+
+.auth-form-container > .eyebrow {
+    color: var(--coral);
+}
+
+.auth-form-container h2 {
+    margin-bottom: 12px;
+    font: 700 clamp(29px, 3vw, 40px)/1.15 var(--fonte-titulo);
+    letter-spacing: -1px;
+}
+
+.auth-form-container h2 span {
+    color: var(--coral);
+}
+
+.description {
+    margin-bottom: 28px;
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.auth-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form-container label {
+    margin-bottom: 8px;
+    color: #d4cec4;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.auth-form-container input {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 17px;
+    padding: 0 13px;
+    border: 1px solid #3b3934;
+    border-radius: 4px;
+    outline: none;
+    background: var(--preto-card);
+    color: var(--branco);
+    font-family: var(--fonte);
+    font-size: 12px;
+}
+
+.auth-form-container input:focus {
+    border-color: var(--coral);
+}
+
+.auth-form-container input::placeholder {
+    color: #77736c;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 75px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    height: 45px;
+    border: none;
+    background: transparent;
+    color: var(--coral);
+    font-family: var(--fonte);
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 46px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 30px;
+    background: var(--coral);
+    color: var(--preto);
+    font-family: var(--fonte);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.primary-button:hover {
+    background: #ff745e;
+}
+
+.primary-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.primary-button span {
+    font-size: 17px;
+}
+
+.message {
+    min-height: 15px;
+    margin-bottom: 8px;
+    color: var(--creme);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.message.error {
+    color: #ff998a;
+}
+
+.switch-page {
+    margin: 24px 0 17px;
+    color: var(--cinza);
+    font-size: 11px;
+    text-align: center;
+}
+
+.switch-page a {
+    margin-left: 4px;
+    color: var(--coral);
+    font-weight: 700;
+}
+
+.back-link {
+    display: block;
+    color: #c4bdb1;
+    font-size: 10px;
+    text-align: center;
+}
+
+.back-link:hover {
+    color: var(--coral);
+}
+
+.auth-content footer {
+    margin-top: 40px;
+    color: #77736c;
+    font-size: 9px;
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-banner {
+        min-height: 270px;
+        padding: 25px 7%;
+    }
+
+    .banner-text {
+        max-width: 75%;
+        margin: 30px 0 0;
+        padding: 0 0 25px;
+    }
+
+    .banner-text h1 {
+        margin-bottom: 12px;
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .banner-text .eyebrow {
+        margin-bottom: 10px;
+    }
+
+    .banner-text > p:last-child {
+        font-size: 10px;
+    }
+
+    .vinyl-record {
+        right: -65px;
+        bottom: -75px;
+        width: 210px;
+        border-width: 5px;
+    }
+
+    .banner-footer {
+        display: none;
+    }
+
+    .auth-content {
+        justify-content: flex-start;
+        padding: 35px 7%;
+    }
+
+    .auth-form-container {
+        max-width: 440px;
+    }
+
+    .auth-content footer {
+        margin-top: 35px;
+    }
+}

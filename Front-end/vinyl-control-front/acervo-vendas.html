@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinyl Control | Acervo e vendas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/acervo-vendas.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./index.html"><span class="brand-mark">◉</span> vinyl<span>control</span></a>
+    <nav class="nav" id="navPrincipal">
+      <a href="./index.html">Início</a>
+      <a class="nav-current" href="./acervo-vendas.html">Acervo e vendas</a>
+      <a href="./index.html#admin">Gerenciar estoque</a>
+    </nav>
+    <div class="topbar-actions">
+      <div class="usuario-menu" id="usuarioMenu">
+        <button class="usuario-botao" id="usuarioBotao" type="button" aria-expanded="false" aria-label="Abrir opções do usuário">
+          <span class="usuario-avatar" id="usuarioAvatar">U</span>
+          <span class="usuario-info"><small>Bem-vindo(a),</small><strong id="usuarioNome">Usuário</strong></span>
+          <span class="usuario-seta">⌄</span>
+        </button>
+        <div class="usuario-dropdown" id="usuarioDropdown">
+          <div class="usuario-dropdown-info"><strong id="usuarioNomeCompleto">Usuário</strong><small id="usuarioEmail">Conta conectada</small></div>
+          <button class="botao-sair" id="botaoSair" type="button">Sair da conta ↗</button>
+        </div>
+      </div>
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu" type="button">☰</button>
+      <a class="top-cta" href="#acervo">Explorar acervo <span>↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="av-hero">
+      <div class="av-hero-copy">
+        <p class="eyebrow"><span class="av-eyebrow-dot"></span> VINYL CONTROL · ACERVO & VENDAS</p>
+        <h1>Discos com<br><em>histórias.</em></h1>
+        <p>Consulte a coleção, encontre o próximo favorito e registre as saídas de estoque em um só lugar.</p>
+        <a class="pill-button pill-dark" href="#acervo">Explorar acervo <span>↗</span></a>
+      </div>
+      <div class="av-hero-art" aria-hidden="true"><div class="av-sun"></div><div class="av-big-record"><div class="av-record-label">VINYL<br><small>CONTROL</small></div></div><span class="av-sticker">SIDE A<br>PLAY IT LOUD ✳</span></div>
+      <div class="av-hero-footer"><span>01 — A COLEÇÃO</span><span>02 — REGISTRE UMA VENDA ↓</span></div>
+    </section>
+
+    <section class="av-content" id="acervo">
+      <div class="av-section-head">
+        <div><p class="eyebrow">A COLEÇÃO DA LOJA</p><h2>Acervo disponível<span>.</span></h2><p class="av-subtitle">Busque por disco ou artista e filtre o que está disponível.</p></div>
+        <div class="av-api-status"><span class="status-dot" id="avStatusDot"></span><span id="avApiStatus">Conectando à API...</span></div>
+      </div>
+
+      <div class="av-stats">
+        <article class="av-stat"><span>DISCOS CADASTRADOS</span><strong id="avTotalDiscos">—</strong><small>títulos no catálogo</small></article>
+        <article class="av-stat"><span>UNIDADES EM ESTOQUE</span><strong id="avTotalUnidades">—</strong><small>somando as quantidades</small></article>
+        <article class="av-stat"><span>ESTOQUE BAIXO</span><strong id="avEstoqueBaixo">—</strong><small>no mínimo cadastrado</small></article>
+      </div>
+
+      <div class="av-filters">
+        <label class="av-search"><span>⌕</span><input type="search" id="avBusca" placeholder="Buscar por título ou artista..." autocomplete="off"></label>
+        <label class="av-filter-label">Disponibilidade<select id="avFiltroEstoque"><option value="todos">Todos os discos</option><option value="disponivel">Em estoque</option><option value="baixo">Estoque baixo</option><option value="esgotado">Sem estoque</option></select></label>
+        <label class="av-filter-label">Gênero<select id="avFiltroGenero"><option value="todos">Todos os gêneros</option></select></label>
+        <button class="outline-button" id="avAtualizar" type="button">Atualizar ↻</button>
+      </div>
+      <div class="av-results-line"><span id="avQuantidadeResultados">Carregando acervo...</span><button type="button" id="avLimparFiltros">Limpar filtros</button></div>
+      <div class="av-grid" id="avGrid"><div class="loading-card">Carregando discos do banco de dados...</div></div>
+    </section>
+
+    <section class="av-sales" id="vendas">
+      <div class="av-sales-intro"><p class="eyebrow">SAÍDA DE ESTOQUE</p><h2>Registrar uma<br><em>venda.</em></h2><p>Selecione o disco e a quantidade vendida. O sistema registra a saída e atualiza o estoque disponível.</p><div class="av-sales-note"><span>✳</span><p>A venda é registrada como uma movimentação de saída pela API existente.</p></div></div>
+      <form class="av-sale-form" id="avVendaForm">
+        <div class="av-form-title"><span>REGISTRO Nº <b id="avNumeroRegistro">—</b></span><h3>Detalhes da venda</h3></div>
+        <label>Disco<select id="avVendaDisco" required><option value="">Selecione um disco</option></select></label>
+        <div class="av-selected-disk" id="avDiscoSelecionado"><div class="av-mini-record">◉</div><div><strong>Escolha um disco</strong><small>O estoque aparecerá aqui</small></div></div>
+        <div class="av-form-row"><label>Quantidade<input id="avVendaQuantidade" type="number" min="1" step="1" value="1" required></label><label>Valor unitário (R$)<input id="avValorUnitario" type="number" min="0.01" step="0.01" placeholder="0,00" required></label></div>
+        <div class="av-total"><span>Total informado</span><strong id="avTotalVenda">R$ 0,00</strong></div>
+        <button class="pill-button av-submit" type="submit" id="avRegistrarVenda">Registrar saída <span>↗</span></button>
+        <p class="av-form-message" id="avVendaMensagem" role="status"></p>
+        <p class="av-form-disclaimer">Observação: a rota de movimentações disponível registra o tipo, a quantidade, o disco e o usuário. O valor unitário informado nesta tela serve para calcular o total exibido e não é salvo no histórico financeiro pela rota atual.</p>
+      </form>
+    </section>
+
+    <section class="av-bottom-cta"><div><p class="eyebrow">MANTENHA TUDO NO RITMO</p><h2>Precisa atualizar o catálogo?</h2></div><a class="pill-button" href="./index.html#admin">Ir para gerenciamento <span>↗</span></a></section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="./index.html"><span class="brand-mark">◉</span> vinyl<span>control</span></a><p>Para quem acredita que música também é objeto de afeto.</p><span>© 2026 Vinyl Control</span></footer>
+  <div class="toast" id="avToast" role="status"></div>
+  <script src="./js/acervo-vendas.js"></script>
+</body>
+</html>

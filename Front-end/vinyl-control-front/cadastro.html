@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta | Vinyl Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+    <main class="auth-page">
+        <section class="auth-banner">
+            <a href="./index.html" class="logo">◉ vinyl<span>control</span></a>
+
+            <div class="banner-text">
+                <p class="eyebrow">COMECE SUA COLEÇÃO</p>
+                <h1>YOUR SOUND.<br><em>YOUR SPACE.</em></h1>
+                <p>Crie sua conta e tenha um espaço só seu para cuidar de cada disco.</p>
+            </div>
+
+            <div class="vinyl-record">
+                <div class="record-center">VINYL<br><small>CONTROL</small></div>
+            </div>
+
+            <span class="banner-footer">VINYL CULTURE · EST. 2026</span>
+        </section>
+
+        <section class="auth-content">
+            <div class="auth-form-container">
+                <p class="eyebrow">FAÇA PARTE DA COMUNIDADE</p>
+                <h2>Crie sua conta<span>.</span></h2>
+                <p class="description">Preencha os dados para começar.</p>
+
+                <form id="registerForm">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome"
+                        placeholder="Seu nome completo"
+                        maxlength="100" autocomplete="name" required>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="voce@email.com"
+                        maxlength="150" autocomplete="email" required>
+
+                    <label for="senha">Senha</label>
+                    <div class="password-field">
+                        <input type="password" id="senha" name="senha"
+                            placeholder="Mínimo de 6 caracteres"
+                            minlength="6" autocomplete="new-password" required>
+                        <button type="button" class="toggle-password"
+                            data-target="senha">Mostrar</button>
+                    </div>
+
+                    <label for="confirmarSenha">Confirmar senha</label>
+                    <div class="password-field">
+                        <input type="password" id="confirmarSenha"
+                            name="confirmarSenha"
+                            placeholder="Digite a senha novamente"
+                            minlength="6" autocomplete="new-password" required>
+                        <button type="button" class="toggle-password"
+                            data-target="confirmarSenha">Mostrar</button>
+                    </div>
+
+                    <p id="registerMessage" class="message" role="status"></p>
+
+                    <button type="submit" id="registerButton" class="primary-button">
+                        Criar conta <span>↗</span>
+                    </button>
+                </form>
+
+                <p class="switch-page">
+                    Já tem uma conta?
+                    <a href="./login.html">Entrar</a>
+                </p>
+
+                <a href="./index.html" class="back-link">← Voltar para a página inicial</a>
+            </div>
+
+            <footer>© 2026 Vinyl Control · Feito para quem ama música.</footer>
+        </section>
+    </main>
+
+    <script src="./js/auth.js"></script>
+</body>
+</html>
